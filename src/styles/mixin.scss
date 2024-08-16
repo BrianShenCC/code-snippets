@@ -1,0 +1,40 @@
+// if you want to customize component for a specific theme use @include theme-light or @include theme-dark
+/*
+* .button {
+*   @include theme-light {
+*     background-color: var(--color-n-1);
+*   }
+*   @include theme-dark {
+*     background-color: var(--color-n-12);
+*   }
+*/
+
+@mixin theme-light {
+  $scope: &;
+
+  @at-root {
+    #{theme-selector(':root', $scope)} {
+      @content;
+    }
+
+    #{theme-selector('html[theme-mode=light]', $scope)} {
+      @content;
+    }
+  }
+}
+
+@mixin theme-dark {
+  $scope: &;
+
+  @at-root {
+    #{theme-selector('html[theme-mode=system]', $scope)} {
+      @media (prefers-color-scheme: dark) {
+        @content;
+      }
+    }
+
+    #{theme-selector('html[theme-mode=dark]', $scope)} {
+      @content;
+    }
+  }
+}

@@ -1,3 +1,6 @@
+@import './function.scss';
+@import './mixin.scss';
+
 @mixin component-size {
   --inline-height-l: 40px;
   --inline-height-m: 32px;

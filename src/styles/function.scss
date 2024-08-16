@@ -1,0 +1,36 @@
+@use 'sass:math';
+@use 'sass:color';
+
+@function theme-selector($theme, $scope) {
+  @if ($scope) {
+    @return selector-nest($theme, $scope);
+  } @else {
+    @return $theme;
+  }
+}
+
+@function rgb-string($color) {
+  @return color.red($color), color.green($color), color.blue($color);
+}
+
+@function use-rgb($name: primary, $level: none) {
+  @if $level != none {
+    @return rgb(var(#{string.slice('#{$name}', 1, 1)}-#{$level}));
+  }
+  @return rgb(var(#{$name}));
+}
+
+@function use-rgba($name, $opacity) {
+  @return rgba(var(#{$name}), $opacity);
+}
+
+@mixin transition($target: all) {
+  transition: $target $animation-duration-slow $animation-interpolation;
+}
+
+@mixin use-text($target: base) {
+  $map: map-get($text-size, $target);
+
+  font-size: map-get($map, font-size);
+  line-height: map-get($map, line-height);
+}
