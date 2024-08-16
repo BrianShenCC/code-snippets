@@ -1,0 +1,36 @@
+@mixin component-size {
+  --inline-height-l: 40px;
+  --inline-height-m: 32px;
+  --inline-height-s: 28px;
+  --inline-padding-l: 15px;
+  --inline-padding-m: 12px;
+  --inline-padding-s: 8px;
+  --font-size-4xl: 36px;
+  --font-size-3xl: 30px;
+  --font-size-2xl: 24px;
+  --font-size-xl: 20px;
+  --font-size-lg: 18px;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+
+  --line-height-4xl: 40px;
+  --line-height-3xl: 36px;
+  --line-height-2xl: 32px;
+  --line-height-xl: 28px;
+  --line-height-lg: 26px;
+  --line-height-base: 20px;
+  --line-height-sm: 16px;
+  --line-height-xs: 14px;
+
+  --icon-size-l: 18px;
+  --icon-size-m: 16px;
+  --icon-size-s: 14px;
+
+  --border-radius-l: 4px;
+  --border-radius-m: 2px;
+  --spacing-xl: 16px;
+  --spacing-l: 12px;
+  --spacing-m: 8px;
+  --spacing-s: 4px;
+}

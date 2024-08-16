@@ -1,0 +1,44 @@
+
+$button-size: (
+  large: (
+    height: var(--inline-height-l),
+    padding-hoz: var(--inline-padding-l),
+    font-size: var(--font-size-base),
+    line-height: var(--line-height-4xl),
+  ),
+  medium: (
+    height: var(--inline-height-m),
+    padding-hoz: var(--inline-padding-m),
+    font-size: var(--font-size-sm),
+    line-height: var(--line-height-lg),
+  ),
+  small: (
+    height: var(--inline-height-s),
+    padding-hoz: var(--inline-padding-s),
+    font-size: var(--font-size-sm),
+    line-height: var(--line-height-lg),
+  ),
+);
+
+.app-button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+
+  @each $key in large medium small {
+    $map: map-get($button-size, $key);
+
+    &--#{$key} {
+      height: map-get($map, height);
+      font-size: map-get($map, font-size);
+      line-height: map-get($map, line-height);
+      padding-left: map-get($map, padding-hoz);
+      padding-right: map-get($map, padding-hoz);
+      border-radius: calc(map-get($map, height) / 2);
+    }
+  }
+}
