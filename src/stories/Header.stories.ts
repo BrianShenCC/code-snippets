@@ -17,6 +17,6 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const LoggedIn: Story = {
+export const SwitchTheme: Story = {
 
 };
